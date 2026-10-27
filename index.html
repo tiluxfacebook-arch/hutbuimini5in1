@@ -514,7 +514,7 @@ footer a:hover{color:var(--or)}
         <p class="fc-sub">Freeship - Thanh toán khi nhận hàng</p>
         <div class="hp" aria-hidden="true"><label for="website">Website</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
         <div class="form-fail" role="alert"></div>
-        <div class="fg"><label for="fullname">Họ và tên <em>*</em></label><input type="text" id="fullname" name="fullname" autocomplete="name" placeholder="VD: Nguyễn Văn An"><div class="msg">Nhập họ tên, ít nhất 2 ký tự.</div></div>
+        <div class="fg"><label for="fullname">Họ và tên <em>*</em></label><input type="text" id="fullname" name="fullname" autocomplete="name" placeholder="VD: Nguyễn Văn An"><div class="msg">Nhập họ tên thật, chỉ gồm chữ (không số, không ký tự lạ).</div></div>
         <div class="fg"><label for="phone">Số điện thoại <em>*</em></label><input type="tel" id="phone" name="phone" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="VD: 0901234567"><div class="msg">Nhập số điện thoại 10 số, bắt đầu bằng 0.</div></div>
         <div class="fg"><label for="address">Địa chỉ nhận hàng <em>*</em></label><input type="text" id="address" name="address" autocomplete="street-address" placeholder="Số nhà, đường, phường/xã, quận/huyện, tỉnh/thành"><div class="msg">Nhập địa chỉ đầy đủ để shipper giao đúng nơi.</div></div>
         <div class="fg-row">
@@ -596,7 +596,7 @@ footer a:hover{color:var(--or)}
     <form id="quickForm" class="js-order" novalidate data-src="panel">
       <div class="hp" aria-hidden="true"><label for="q_website">Website</label><input type="text" id="q_website" name="website" tabindex="-1" autocomplete="off"></div>
       <div class="form-fail" role="alert"></div>
-      <div class="fg"><label for="q_fullname">Họ và tên <em>*</em></label><input type="text" id="q_fullname" name="fullname" autocomplete="name" placeholder="VD: Nguyễn Văn An"><div class="msg">Nhập họ tên, ít nhất 2 ký tự.</div></div>
+      <div class="fg"><label for="q_fullname">Họ và tên <em>*</em></label><input type="text" id="q_fullname" name="fullname" autocomplete="name" placeholder="VD: Nguyễn Văn An"><div class="msg">Nhập họ tên thật, chỉ gồm chữ (không số, không ký tự lạ).</div></div>
       <div class="fg"><label for="q_phone">Số điện thoại <em>*</em></label><input type="tel" id="q_phone" name="phone" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="VD: 0901234567"><div class="msg">Nhập số điện thoại 10 số, bắt đầu bằng 0.</div></div>
       <div class="fg"><label for="q_address">Địa chỉ nhận hàng <em>*</em></label><input type="text" id="q_address" name="address" autocomplete="street-address" placeholder="Số nhà, đường, phường/xã, tỉnh/thành"><div class="msg">Nhập địa chỉ đầy đủ để shipper giao đúng nơi.</div></div>
       <div class="tiers" role="group" aria-label="Chọn gói">
@@ -691,8 +691,19 @@ document.getElementById('quantity').addEventListener('change',function(){updateT
 orderForm.addEventListener('focusin',trackInitiateCheckout);
 
 /* ================= Validation ================= */
+/* Tên hợp lệ: có chữ cái, không có số, không lặp 1 ký tự, không chứa từ tục / vô nghĩa */
+var BAD_NAME=/(^|\s)(khung|khung dien|dien khung|tam than|than kinh|oc cho|con cho|thang ngu|dm|dcm|dmm|vcl|vkl|clm|dit|lon|cac|dkm|test|abc|abcd|asd|asdf|qwe|qwerty|xxx|aaa|fake|spam|admin|lua dao|bo may|ma may)(\s|$)/;
+function nameOk(v){
+  var t=removeDiacritics(v.trim()).replace(/\s+/g,' ');
+  if(t.length<2||t.length>60) return false;
+  if(/[0-9@#$%^&*_=+<>{}\[\]\\|\/]/.test(t)) return false;
+  if(!/[a-z]/.test(t)) return false;
+  if(/^(.)\1+$/.test(t.replace(/\s/g,''))) return false;
+  if(BAD_NAME.test(t)) return false;
+  return true;
+}
 var RULES={
-  fullname:function(v){return v.trim().length>=2;},
+  fullname:function(v){return nameOk(v);},
   phone:function(v){return /^0\d{9}$/.test(v.replace(/[\s.]/g,''));},
   address:function(v){return v.trim().length>=8;}
 };
@@ -716,6 +727,13 @@ function submitOrder(form){
   ['fullname','phone','address'].forEach(function(n){var i=form.querySelector('[name="'+n+'"]');if(!checkField(i)){ok=false;if(!firstBad)firstBad=i;}});
   if(!ok){firstBad.focus();return;}
   fail.classList.remove('show');
+  // Chặn gửi lại cùng số điện thoại trong 5 phút (khách bấm 2 lần / spam đơn)
+  var ph0=form.querySelector('[name="phone"]').value.replace(/[\s.]/g,'');
+  var last=null; try{last=JSON.parse(localStorage.getItem('cp_last_order')||'null');}catch(e){}
+  if(last && Date.now()-last.t<5*60*1000 && (last.p===ph0 || Date.now()-last.t<60*1000)){
+    fail.textContent='Đơn của bạn đã được ghi nhận lúc '+new Date(last.t).toLocaleTimeString('vi-VN')+'. Nhân viên sẽ gọi xác nhận, bạn không cần đặt lại. Cần sửa đơn, gọi hotline 0395 018 127.';
+    fail.classList.add('show'); return;
+  }
   btn.classList.add('loading'); btn.disabled=true;
 
   waitForIP(function(){
@@ -751,8 +769,10 @@ function submitOrder(form){
       return r.json ? r.json().catch(function(){return {};}) : {};
     }).then(function(res){
       if(res && res.status==='error') throw new Error(res.message||'Backend từ chối đơn');
-      // Pixel Purchase dùng CÙNG event_id với CAPI để Meta dedup
-      if(typeof fbq!=='undefined'){
+      try{localStorage.setItem('cp_last_order',JSON.stringify({t:Date.now(),p:phone}));}catch(e){}
+      // Pixel Purchase dùng CÙNG event_id với CAPI để Meta dedup.
+      // Backend đánh dấu nghi ảo (res.flag==='review') -> KHÔNG bắn Purchase để không làm bẩn dữ liệu quảng cáo.
+      if(typeof fbq!=='undefined' && !(res && res.flag==='review')){
         fbq('init',PIXEL_ID,{ph:'84'+phone.slice(1),country:'vn'}); // advanced matching, Pixel tự hash
         fbq('track','Purchase',{content_ids:[PRODUCT_ID],content_name:PRODUCT_NAME,content_type:'product',num_items:qty,value:total,currency:'VND'},{eventID:eventId});
       }
