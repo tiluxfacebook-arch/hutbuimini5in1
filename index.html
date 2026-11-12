@@ -126,10 +126,10 @@ h1,h2,h3{line-height:1.18;text-wrap:balance;margin:0}
 @keyframes marq{to{transform:translateX(-50%)}}
 
 /* Countdown block */
-.cd-block{background:var(--ink);color:#fff;position:relative;overflow:hidden;padding-block:56px;text-align:center}
+.cd-block{background:var(--ink);color:#fff;position:relative;overflow:hidden;padding-block:22px 26px;text-align:center}
 .cd-block .ghost{position:absolute;inset:0;display:grid;place-items:center;font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:clamp(180px,32vw,380px);color:rgba(255,100,20,.08);line-height:1;pointer-events:none}
-.cd-block h2{font-size:clamp(24px,3vw,34px);font-weight:900;position:relative}
-.cd-block p{color:#d9c7b8;position:relative;margin:8px 0 26px}
+.cd-block h2{font-size:clamp(19px,3vw,28px);font-weight:900;position:relative}
+.cd-block p{color:#d9c7b8;position:relative;margin:6px 0 14px;font-size:14px}
 .cd{display:inline-flex;align-items:center;gap:10px;position:relative}
 .cd .u{background:#fff;color:var(--ink);border-radius:16px;min-width:96px;padding:10px 8px 6px}
 .cd .u b{display:block;font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:64px;line-height:1;font-variant-numeric:tabular-nums}
@@ -347,6 +347,19 @@ footer a:hover{color:var(--or)}
 </header>
 
 <main id="top">
+<section class="cd-block" aria-label="Thời gian còn lại của ưu đãi">
+  <div class="ghost" aria-hidden="true">-50%</div>
+  <div class="wrap">
+    <h2>Giá 299.000đ chỉ giữ đến hết khung giờ này</h2>
+    <p>Mua 2 máy chỉ 449.000đ. Hết giờ, giá quay về 598.000đ/máy. Nhận hàng rồi mới trả tiền.</p>
+    <div class="cd" data-cd="block">
+      <div class="u"><b data-u="h">00</b><small>Giờ</small></div><span class="colon">:</span>
+      <div class="u"><b data-u="m">00</b><small>Phút</small></div><span class="colon">:</span>
+      <div class="u"><b data-u="s">00</b><small>Giây</small></div>
+    </div>
+  </div>
+</section>
+
 <section class="hero">
   <div class="wrap">
     <div>
@@ -395,18 +408,6 @@ footer a:hover{color:var(--or)}
   </div>
 </div>
 
-<section class="cd-block" aria-label="Thời gian còn lại của ưu đãi">
-  <div class="ghost" aria-hidden="true">-50%</div>
-  <div class="wrap">
-    <h2>Giá 299.000đ chỉ giữ đến hết khung giờ này</h2>
-    <p>Mua 2 máy chỉ 449.000đ. Hết giờ, giá quay về 598.000đ/máy. Nhận hàng rồi mới trả tiền.</p>
-    <div class="cd" data-cd="block">
-      <div class="u"><b data-u="h">00</b><small>Giờ</small></div><span class="colon">:</span>
-      <div class="u"><b data-u="m">00</b><small>Phút</small></div><span class="colon">:</span>
-      <div class="u"><b data-u="s">00</b><small>Giây</small></div>
-    </div>
-  </div>
-</section>
 
 <section class="sec" id="tinh-nang">
   <div class="wrap">
