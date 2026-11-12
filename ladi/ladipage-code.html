@@ -1,0 +1,803 @@
+<!-- ===== CODE DÁN VÀO PHẦN TỬ HTML CỦA LADIPAGE (CLEANER-PRO) =====
+  Pixel 1608528847436843 + 4727157860901767 đã có sẵn trong code: KHÔNG gắn thêm 2 pixel này trong cài đặt LadiPage (tránh đếm đôi).
+  Ảnh lấy từ cdn.jsdelivr.net (GitHub). Đơn gửi về Google Sheet CLEANER-PRO như landing cũ. -->
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1608528847436843');
+fbq('init', '4727157860901767');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1608528847436843&ev=PageView&noscript=1"
+/><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4727157860901767&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<style>
+:root{
+  --or:#FF6414;--or-deep:#E04E00;--or-pale:#FFF1E7;--or-line:#FFD9C2;--ink:#24160C;--ink-2:#5B4636;--white:#FFFFFF;--ok:#1E9E5A;--err:#D7261E;
+  --r-card:22px;--shadow:0 14px 36px rgba(224,78,0,.16);--shadow-sm:0 6px 18px rgba(224,78,0,.14);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{line-height:1.18;text-wrap:balance;margin:0}
+.num{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-variant-numeric:tabular-nums}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:20px}
+.ic{display:inline-flex;align-items:center;justify-content:center;flex:none}
+.ic svg{width:100%;height:100%}
+:focus-visible{outline:3px solid var(--or);outline-offset:3px;border-radius:6px}
+
+/* Announcement */
+.topbar{background:var(--ink);color:#fff;font-size:14px;text-align:center;padding:8px 16px;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap}
+.topbar b{color:var(--or)}
+.topbar .cd-inline{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:17px;background:var(--or);color:#fff;padding:1px 10px;border-radius:999px;letter-spacing:.5px}
+
+/* Nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--or-line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-mark{width:34px;height:34px;border-radius:9px;background:var(--or);color:#fff;font-weight:900;font-size:19px;display:grid;place-items:center;transform:rotate(-8deg);box-shadow:var(--shadow-sm)}
+.logo-word{font-weight:900;letter-spacing:.18em;font-size:17px}
+.logo-word span{color:var(--or)}
+.nav-links{display:flex;gap:26px;font-weight:600;font-size:15px}
+.nav-links a{text-decoration:none;color:var(--ink-2)}
+.nav-links a:hover{color:var(--or)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;font-family:inherit;font-weight:800;cursor:pointer;text-decoration:none;transition:transform .15s,box-shadow .15s,background .15s}
+.btn .ic{width:20px;height:20px}
+.btn-or{background:var(--or);color:#fff;box-shadow:0 10px 24px rgba(255,100,20,.35)}
+.btn-or:hover{background:var(--or-deep);transform:translateY(-2px)}
+.btn-ghost{background:#fff;color:var(--ink);box-shadow:inset 0 0 0 2px var(--or-line)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 2px var(--or)}
+.btn-sm{padding:9px 18px;font-size:14px}
+.btn-lg{padding:17px 30px;font-size:17px}
+
+/* Hero */
+.hero{padding-block:48px 56px;background:radial-gradient(900px 480px at 85% 30%,var(--or-pale),transparent 70%),var(--white)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--or-pale);color:var(--or-deep);font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:7px 14px;border-radius:999px}
+.eyebrow .ic{width:16px;height:16px}
+.hero h1{font-size:clamp(32px,4.6vw,52px);font-weight:900;margin-top:16px;letter-spacing:-.01em}
+.hero h1 span{color:var(--or)}
+.hero .sub{font-size:clamp(18px,2vw,21px);font-weight:700;color:var(--ink);margin:14px 0 10px}
+.hero .desc{color:var(--ink-2);max-width:54ch;margin:0}
+.price-row{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin:24px 0 22px}
+.price-new{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:clamp(52px,6vw,70px);line-height:.9;color:var(--or)}
+.price-new small{font-size:.45em;vertical-align:top;margin-left:2px}
+.price-old{font-family:"Barlow Condensed",sans-serif;font-size:26px;color:#9a8574;text-decoration:line-through;font-weight:600}
+.price-tag{background:var(--ink);color:#fff;font-weight:800;border-radius:10px;padding:4px 10px;font-size:15px;margin-bottom:6px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.combo{display:flex;align-items:center;gap:12px;background:var(--or-pale);border-radius:16px;padding:12px 16px;margin:-6px 0 22px;max-width:470px;box-shadow:inset 0 0 0 1.5px var(--or-line)}
+.combo .ic{width:40px;height:40px;border-radius:50%;background:var(--or);color:#fff;padding:9px}
+.combo b{display:block;font-size:17px}.combo b .num{color:var(--or-deep);font-size:22px;font-weight:800}
+.combo small{color:var(--ink-2);font-size:13px;font-weight:600}
+.tiers{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.tier{position:relative;border:1.5px solid var(--or-line);background:#fff;border-radius:14px;padding:12px;text-align:left;cursor:pointer;font-family:inherit;color:var(--ink)}
+.tier b{display:block;font-size:14px}.tier .num{font-size:24px;font-weight:800;color:var(--or)}
+.tier small{display:block;font-size:12px;color:var(--ink-2)}
+.tier[aria-pressed="true"]{border-color:var(--or);box-shadow:0 0 0 3px rgba(255,100,20,.18);background:var(--or-pale)}
+.tier .badge{position:absolute;top:-10px;right:10px;background:var(--ink);color:#fff;font-size:10px;font-weight:800;letter-spacing:.06em;padding:3px 8px;border-radius:999px}
+.stock{margin-top:26px;max-width:470px}
+.stock-top{display:flex;justify-content:space-between;font-size:14px;font-weight:700;margin-bottom:8px;gap:10px;flex-wrap:wrap}
+.stock-top b{color:var(--or-deep)}
+.bar{height:14px;border-radius:999px;background:var(--or-pale);overflow:hidden;box-shadow:inset 0 0 0 1px var(--or-line)}
+.bar i{display:block;height:100%;width:86%;border-radius:999px;background:repeating-linear-gradient(45deg,var(--or) 0 12px,var(--or-deep) 12px 24px);background-size:34px 34px;animation:stripes 1.2s linear infinite}
+@keyframes stripes{to{background-position:34px 0}}
+
+.visual{position:relative;padding:34px}
+.visual .ring{position:absolute;inset:6px;border-radius:50%;border:2px dashed var(--or-line);animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.visual .photo{position:relative;border-radius:28px;overflow:hidden;box-shadow:0 30px 60px rgba(36,22,12,.28);animation:bob 5s ease-in-out infinite;z-index:2}
+@keyframes bob{50%{transform:translateY(-10px)}}
+.sticker{position:absolute;z-index:4;right:0;top:0;width:104px;height:104px;border-radius:50%;background:var(--or);color:#fff;display:grid;place-items:center;text-align:center;font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:40px;line-height:.85;box-shadow:0 0 0 6px #fff,var(--shadow);animation:pulse 1.8s ease-in-out infinite}
+.sticker small{display:block;font-family:"Be Vietnam Pro",sans-serif;font-size:11px;font-weight:800;letter-spacing:.1em;margin-top:4px}
+@keyframes pulse{50%{transform:scale(1.08)}}
+.floaters{position:absolute;inset:0;pointer-events:none;z-index:3}
+.fl{position:absolute;white-space:nowrap;animation:drift 7s ease-in-out infinite}
+.fl.big{font-weight:900;color:rgba(255,100,20,.2);font-size:44px;letter-spacing:.04em}
+.fl.pill{background:#fff;color:var(--or-deep);font-weight:800;font-size:12px;letter-spacing:.06em;padding:6px 12px;border-radius:999px;box-shadow:inset 0 0 0 2px var(--or),var(--shadow-sm)}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(8px,-12px)}}
+.fl:nth-child(2){animation-delay:-2s}.fl:nth-child(3){animation-delay:-4s}.fl:nth-child(4){animation-delay:-1s}.fl:nth-child(5){animation-delay:-3s}.fl:nth-child(6){animation-delay:-5s}
+
+/* Marquee */
+.marquee{background:var(--or);color:#fff;overflow:hidden;padding-block:14px}
+.marquee-track{display:flex;gap:40px;width:max-content;animation:marq 28s linear infinite;font-weight:800;letter-spacing:.06em;font-size:15px}
+.marquee-track span{display:inline-flex;align-items:center;gap:40px}
+.marquee-track span::after{content:"";width:8px;height:8px;background:#fff;border-radius:2px;transform:rotate(45deg)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* Countdown block */
+.cd-block{background:var(--ink);color:#fff;position:relative;overflow:hidden;padding-block:22px 26px;text-align:center}
+.cd-block .ghost{position:absolute;inset:0;display:grid;place-items:center;font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:clamp(180px,32vw,380px);color:rgba(255,100,20,.08);line-height:1;pointer-events:none}
+.cd-block h2{font-size:clamp(19px,3vw,28px);font-weight:900;position:relative}
+.cd-block p{color:#d9c7b8;position:relative;margin:6px 0 14px;font-size:14px}
+.cd{display:inline-flex;align-items:center;gap:10px;position:relative}
+.cd .u{background:#fff;color:var(--ink);border-radius:16px;min-width:96px;padding:10px 8px 6px}
+.cd .u b{display:block;font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:64px;line-height:1;font-variant-numeric:tabular-nums}
+.cd .u small{font-size:12px;font-weight:700;color:var(--ink-2);text-transform:uppercase;letter-spacing:.1em}
+.cd .colon{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:54px;color:var(--or);animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:.2}}
+
+/* Sections */
+section{scroll-margin-top:72px}
+.sec{padding-block:72px}
+.sec.pale{background:var(--or-pale)}
+.sec-head{max-width:720px;margin:0 auto 40px;text-align:center}
+.sec-head .kicker{color:var(--or-deep);font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.sec-head h2{font-size:clamp(28px,3.4vw,40px);font-weight:900;margin-top:8px}
+.sec-head p{color:var(--ink-2);margin:12px auto 0;max-width:60ch}
+
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.feat{background:#fff;border-radius:var(--r-card);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.feat img{aspect-ratio:1/1;object-fit:contain;width:100%;height:auto}
+.feat-body{padding:22px 24px 26px;display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:start}
+.feat-ic{width:48px;height:48px;border-radius:50%;background:var(--or);color:#fff;padding:12px}
+.feat h3{font-size:20px;font-weight:800;margin-bottom:6px}
+.feat p{margin:0;color:var(--ink-2);font-size:15px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.gallery img{border-radius:18px;box-shadow:var(--shadow-sm);width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;background:#fff}
+.gallery img:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.gallery img{transition:transform .2s,box-shadow .2s}
+
+.spec-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:28px;align-items:start}
+.box-card{background:var(--ink);color:#fff;border-radius:var(--r-card);padding:30px}
+.box-card h3{font-size:22px;font-weight:900;margin-bottom:18px}
+.box-list{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.box-list li{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start}
+.box-list .ic{width:30px;height:30px;border-radius:50%;background:var(--or);padding:6px;color:#fff}
+.box-list b{display:block}
+.box-list span{color:#d9c7b8;font-size:14px}
+.box-card img{border-radius:16px;margin-top:22px}
+.spec-table{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border-radius:var(--r-card);overflow:hidden;box-shadow:var(--shadow)}
+.spec-table th,.spec-table td{text-align:left;padding:15px 20px;vertical-align:top;font-size:15px}
+.spec-table th{width:38%;color:var(--ink-2);font-weight:600}
+.spec-table td{font-weight:700}
+.spec-table tr:nth-child(odd){background:var(--or-pale)}
+.spec-table .hl{color:var(--or-deep);font-family:"Barlow Condensed",sans-serif;font-size:22px;font-weight:800}
+
+.pol-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pol{background:#fff;border-radius:var(--r-card);padding:28px 22px;text-align:center;box-shadow:inset 0 0 0 1.5px var(--or-line)}
+.pol .ic{width:64px;height:64px;border-radius:50%;background:var(--or);color:#fff;padding:16px;margin:0 auto 14px;box-shadow:var(--shadow-sm)}
+.pol h3{font-size:18px;font-weight:800;margin-bottom:6px}
+.pol p{margin:0;color:var(--ink-2);font-size:14px}
+
+/* Order section */
+.order-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:44px;align-items:start}
+.order-copy h2{font-size:clamp(28px,3.4vw,40px);font-weight:900}
+.order-copy h2 span{color:var(--or)}
+.order-copy p{color:var(--ink-2);max-width:48ch}
+.steps{list-style:none;padding:0;margin:22px 0;display:grid;gap:12px}
+.steps li{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:center;font-weight:600}
+.steps .n{width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:18px}
+.cd-chip{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:#fff;border-radius:999px;padding:10px 20px 10px 14px;font-weight:700}
+.cd-chip .ic{width:22px;height:22px;color:var(--or)}
+.cd-chip b{font-family:"Barlow Condensed",sans-serif;font-size:24px;letter-spacing:.04em;font-variant-numeric:tabular-nums}
+.promises{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:10px}
+.promises li{display:flex;gap:10px;align-items:center;font-weight:600}
+.promises .ic{width:24px;height:24px;border-radius:50%;background:var(--ok);color:#fff;padding:4px}
+
+.form-card{background:#fff;border-radius:24px;padding:30px;box-shadow:inset 0 0 0 2.5px var(--or),var(--shadow)}
+.form-card h3{font-size:22px;font-weight:900;text-align:center}
+.form-card .fc-sub{text-align:center;color:var(--ink-2);font-size:14px;margin:6px 0 20px}
+.fg{margin-bottom:14px}
+.fg label{display:block;font-weight:700;font-size:14px;margin-bottom:6px}
+.fg label em{color:var(--or-deep);font-style:normal}
+.fg input,.fg select,.fg textarea{width:100%;font-family:inherit;font-size:16px;color:var(--ink);background:#fff;border:1.5px solid var(--or-line);border-radius:12px;padding:12px 14px;transition:border-color .15s,box-shadow .15s}
+.fg textarea{resize:vertical;min-height:70px}
+.fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--or);box-shadow:0 0 0 4px rgba(255,100,20,.15)}
+.fg.err input,.fg.err select{border-color:var(--err)}
+.fg .msg{display:none;color:var(--err);font-size:13px;margin-top:5px;font-weight:600}
+.fg.err .msg{display:block}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.sum{display:flex;justify-content:space-between;align-items:center;background:var(--or-pale);border-radius:14px;padding:12px 16px;margin:6px 0 16px;gap:10px;flex-wrap:wrap}
+.sum .l{font-weight:700;font-size:14px}
+.sum .l small{display:block;color:var(--ok);font-weight:700}
+.sum .t{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:32px;color:var(--or-deep);line-height:1}
+.submit{width:100%;padding:17px 20px;font-size:17px}
+.submit .spin{display:none;width:20px;height:20px;border:3px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite}
+.submit.loading .spin{display:inline-block}
+.submit.loading .ic{display:none}
+.submit:disabled{opacity:.75;cursor:wait;transform:none}
+.form-note{font-size:12px;color:var(--ink-2);text-align:center;margin:12px 0 0}
+.form-note a{color:var(--or-deep)}
+.form-fail{display:none;background:#fdecea;color:var(--err);font-weight:600;font-size:14px;border-radius:12px;padding:10px 14px;margin-bottom:12px}
+.form-fail.show{display:block}
+.success{text-align:center;padding:10px 0}
+.success .okc{width:76px;height:76px;border-radius:50%;background:var(--ok);color:#fff;padding:18px;margin:0 auto 14px;animation:pop .5s cubic-bezier(.5,1.6,.4,1)}
+@keyframes pop{0%{transform:scale(0)}100%{transform:scale(1)}}
+.success h3{font-size:24px}
+.success p{color:var(--ink-2)}
+.sum-list{list-style:none;padding:16px 18px;margin:16px 0;background:var(--or-pale);border-radius:14px;text-align:left;display:grid;gap:8px}
+.sum-list li{display:flex;justify-content:space-between;gap:12px;font-size:15px}
+.sum-list li span{color:var(--ink-2)}
+.sum-list li b{text-align:right}
+
+/* Final CTA */
+.final{background:var(--or);color:#fff;text-align:center;padding-block:64px}
+.final h2{font-size:clamp(28px,4vw,44px);font-weight:900}
+.final p{margin:10px auto 22px;max-width:56ch;color:#fff3ea}
+.final .cd .u{min-width:84px}
+.final .cd .u b{font-size:52px}
+.final .cd .colon{color:#fff}
+.final .btn{margin-top:28px;background:var(--ink);color:#fff;box-shadow:0 12px 26px rgba(36,22,12,.3)}
+.final .btn:hover{background:#000}
+
+footer{background:var(--ink);color:#d9c7b8;padding-block:48px 110px;font-size:14px}
+footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px}
+footer .logo-word{color:#fff}
+footer h4{color:#fff;margin:0 0 12px;font-size:15px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+footer li{display:flex;gap:10px;align-items:center}
+footer li .ic{width:18px;height:18px;color:var(--or)}
+footer a{text-decoration:none}
+footer a:hover{color:var(--or)}
+.copyright{grid-column:1/-1;padding-top:20px;color:#9a8574;font-size:13px}
+
+/* Floating button */
+.fab{position:fixed;right:22px;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:50;display:flex;align-items:center;gap:12px;background:var(--or);color:#fff;border:0;border-radius:999px;padding:12px 22px 12px 14px;font-family:inherit;cursor:pointer;box-shadow:0 14px 30px rgba(255,100,20,.45);text-align:left}
+.fab::before{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 0 0 rgba(255,100,20,.55);animation:ripple 1.8s ease-out infinite}
+@keyframes ripple{to{box-shadow:0 0 0 18px rgba(255,100,20,0)}}
+.fab .cart{width:42px;height:42px;border-radius:50%;background:#fff;color:var(--or);padding:9px;animation:shake 3.5s ease-in-out infinite}
+@keyframes shake{0%,84%,100%{transform:rotate(0)}87%{transform:rotate(-14deg)}90%{transform:rotate(12deg)}93%{transform:rotate(-8deg)}96%{transform:rotate(6deg)}}
+.fab b{display:block;font-size:16px;font-weight:900}
+.fab small{display:block;font-size:12px;font-weight:600;opacity:.95}
+.fab small span{font-family:"Barlow Condensed",sans-serif;font-size:15px;font-weight:700;font-variant-numeric:tabular-nums}
+
+/* Quick order panel */
+.backdrop{position:fixed;inset:0;background:rgba(36,22,12,.55);z-index:60;opacity:0;pointer-events:none;transition:opacity .25s}
+.backdrop.open{opacity:1;pointer-events:auto}
+.panel{position:fixed;left:50%;bottom:0;z-index:61;width:min(520px,100%);max-height:92vh;overflow-y:auto;background:#fff;border-radius:24px 24px 0 0;padding:22px 22px calc(22px + env(safe-area-inset-bottom,0px));transform:translate(-50%,105%);visibility:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),visibility 0s .3s;box-shadow:0 -20px 50px rgba(36,22,12,.3)}
+.panel.open{transform:translate(-50%,0);visibility:visible;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:10px}
+.panel-head h3{font-size:20px;font-weight:900}
+.panel-head .cd-mini{font-size:13px;font-weight:700;color:var(--or-deep)}
+.panel-head .cd-mini span{font-family:"Barlow Condensed",sans-serif;font-size:17px;font-variant-numeric:tabular-nums}
+.x{width:40px;height:40px;border-radius:50%;border:0;background:var(--or-pale);color:var(--ink);padding:9px;cursor:pointer;flex:none}
+.mini{display:grid;grid-template-columns:78px 1fr;gap:14px;align-items:center;background:var(--or-pale);border-radius:16px;padding:10px;margin-bottom:16px}
+.mini img{border-radius:12px;aspect-ratio:1/1;object-fit:cover;width:78px;height:78px}
+.mini b{display:block;font-size:15px;line-height:1.35}
+.mini .p{font-family:"Barlow Condensed",sans-serif;font-weight:800;color:var(--or);font-size:24px}
+.mini .p s{color:#9a8574;font-size:17px;font-weight:600;margin-left:6px}
+.stepper{display:flex;align-items:center;gap:0;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--or-line);width:max-content}
+.stepper button{width:44px;height:44px;border:0;background:transparent;border-radius:50%;padding:12px;cursor:pointer;color:var(--ink)}
+.stepper button:hover{color:var(--or)}
+.stepper output{min-width:36px;text-align:center;font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:24px}
+.qty-row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}
+.qty-row label{font-weight:700;font-size:14px}
+
+@media (max-width:980px){
+  .hero .wrap,.order-grid,.spec-grid{grid-template-columns:1fr}
+  .visual{max-width:520px;margin:0 auto;width:100%}
+  .pol-grid{grid-template-columns:1fr 1fr}
+  footer .wrap{grid-template-columns:1fr 1fr}
+  footer .wrap>div:first-child{grid-column:1/-1}
+}
+@media (max-width:760px){
+  .nav-links{display:none}
+  .feat-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr 1fr}
+  .sec{padding-block:56px}
+  .fab{left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));justify-content:center;padding:10px 16px}
+  .fab .cart{width:38px;height:38px}
+  .cd .u{min-width:74px;border-radius:12px}
+  .cd .u b{font-size:46px}
+  .cd .colon{font-size:40px}
+  .final .cd .u{min-width:70px}.final .cd .u b{font-size:42px}
+  .panel{border-radius:20px 20px 0 0}
+}
+@media (max-width:480px){
+  .wrap{padding-inline:16px}
+  .visual{padding:22px}
+  .sticker{width:84px;height:84px;font-size:32px}
+  .fl.big{font-size:32px}
+  .fl.pill{font-size:10px;padding:5px 9px}
+  .pol-grid{grid-template-columns:1fr}
+  .fg-row{grid-template-columns:1fr}
+  .form-card{padding:22px 18px}
+  footer .wrap{grid-template-columns:1fr}
+  .cd{gap:6px}
+  .cd .u{min-width:64px;padding:8px 4px 4px}
+  .cd .u b{font-size:40px}
+  .cta-row .btn{flex:1 1 100%}
+  .topbar{font-size:13px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+
+<div class="topbar">
+  <span><b>FLASH SALE -50%</b> - Freeship toàn quốc - Kiểm tra hàng trước khi thanh toán</span>
+  <span>Kết thúc sau <span class="cd-inline" data-cd="hms">00:00:00</span></span>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="CLEANER PRO - về đầu trang">
+      <span class="logo-mark">C</span><span class="logo-word">CLEANER<span>PRO</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Điều hướng chính">
+      <a href="#tinh-nang">Tính năng</a>
+      <a href="#thong-so">Thông số</a>
+      <a href="#chinh-sach">Chính sách</a>
+      <a href="#dat-hang">Đặt hàng</a>
+    </nav>
+    <button class="btn btn-or btn-sm js-open" type="button">Đặt ngay -50%</button>
+  </div>
+</header>
+
+<main id="top">
+<section class="cd-block" aria-label="Thời gian còn lại của ưu đãi">
+  <div class="ghost" aria-hidden="true">-50%</div>
+  <div class="wrap">
+    <h2>Giá 299.000đ chỉ giữ đến hết khung giờ này</h2>
+    <p>Mua 2 máy chỉ 449.000đ. Hết giờ, giá quay về 598.000đ/máy. Nhận hàng rồi mới trả tiền.</p>
+    <div class="cd" data-cd="block">
+      <div class="u"><b data-u="h">00</b><small>Giờ</small></div><span class="colon">:</span>
+      <div class="u"><b data-u="m">00</b><small>Phút</small></div><span class="colon">:</span>
+      <div class="u"><b data-u="s">00</b><small>Giây</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></span>Chỉ còn hôm nay</span>
+      <h1>Máy hút bụi cầm tay <span>CLEANER-PRO</span> 5 trong 1</h1>
+      <p class="sub">Lực hút 4500Pa - hút, thổi, bơm, hút chân không trong một máy.</p>
+      <p class="desc">Không dây, nặng tay vừa đủ, sạc Type-C. Len vào khe ghế, rãnh cửa, khe gió điều hòa mà máy hút gia đình không với tới. Tặng kèm 5 đầu hút đa năng.</p>
+      <div class="price-row">
+        <div class="price-new num"><span data-price="new">299.000</span><small>đ</small></div>
+        <div>
+          <div class="price-tag">GIẢM 50%</div>
+          <div class="price-old num" data-price="old">598.000đ</div>
+        </div>
+      </div>
+      <div class="combo"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg></span><div><b>Mua 2 máy chỉ <span class="num">449.000đ</span></b><small>Chỉ 224.500đ/máy - tiết kiệm thêm 149.000đ</small></div></div>
+      <div class="cta-row">
+        <button class="btn btn-or btn-lg js-open" type="button"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></span>Đặt hàng giảm 50%</button>
+        <a class="btn btn-ghost btn-lg" href="#tinh-nang">Xem tính năng</a>
+      </div>
+      <div class="stock">
+        <div class="stock-top"><span>Đã bán <b class="num" data-stock="sold">172</b> máy trong đợt này</span><span>Chỉ còn <b class="num" data-stock="left">28</b> suất giá sốc</span></div>
+        <div class="bar" role="progressbar" aria-label="Tỉ lệ suất giá sốc đã bán" aria-valuemin="0" aria-valuemax="100" aria-valuenow="86"><i data-stock="bar"></i></div>
+      </div>
+    </div>
+
+    <div class="visual">
+      <div class="ring" aria-hidden="true"></div>
+      <div class="photo"><img src="https://cdn.jsdelivr.net/gh/tiluxfacebook-arch/hutbuimini5in1@sua-dong-ho-review/ladi/img/anh-01.jpg" width="750" height="750" alt="Máy hút bụi cầm tay CLEANER-PRO màu đen viền vàng hồng, lực hút 4500Pa, kèm 5 đầu hút"></div>
+      <div class="sticker" aria-hidden="true">-50%<small>HÔM NAY</small></div>
+      <div class="floaters" aria-hidden="true">
+        <span class="fl big" style="left:-6px;top:38%">SALE</span>
+        <span class="fl pill" style="left:0;top:6%">FREESHIP</span>
+        <span class="fl pill" style="left:2%;bottom:4%">CHỈ HÔM NAY</span>
+        <span class="fl big" style="right:-4px;bottom:22%">HOT</span>
+        <span class="fl pill" style="right:4%;bottom:2%">COD</span>
+        <span class="fl big" style="left:30%;bottom:-14px;font-size:30px">DEAL SỐC</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>GIẢM 50% HÔM NAY</span><span>FREESHIP TOÀN QUỐC</span><span>NHẬN HÀNG MỚI THANH TOÁN</span><span>TẶNG 5 ĐẦU HÚT</span><span>SẠC NHANH TYPE-C</span><span>ĐỔI MỚI 7 NGÀY</span>
+    <span>GIẢM 50% HÔM NAY</span><span>FREESHIP TOÀN QUỐC</span><span>NHẬN HÀNG MỚI THANH TOÁN</span><span>TẶNG 5 ĐẦU HÚT</span><span>SẠC NHANH TYPE-C</span><span>ĐỔI MỚI 7 NGÀY</span>
+  </div>
+</div>
+
+
+<section class="sec" id="tinh-nang">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Tính năng</div>
+      <h2>Một máy nhỏ, làm sạch cả xe lẫn nhà</h2>
+      <p>Thiết kế súng cầm tay, bật tắt một chạm. Đổi đầu hút trong 2 giây để chuyển từ hút sang thổi hoặc bơm hơi.</p>
+    </div>
+    <div class="feat-grid">
+      <article class="feat">
+        <img src="https://cdn.jsdelivr.net/gh/tiluxfacebook-arch/hutbuimini5in1@sua-dong-ho-review/ladi/img/anh-02.jpg" loading="lazy" width="750" height="750" alt="Cấu tạo bên trong máy: động cơ turbine không chổi than, cánh quạt kim loại, hệ thống lọc xoáy côn">
+        <div class="feat-body"><span class="ic feat-ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><div><h3>Lực hút 4500Pa, động cơ turbine</h3><p>Động cơ không chổi than kết hợp lọc xoáy côn, hút sạch vụn bánh, cát, tóc trên thảm và ghế da.</p></div></div>
+      </article>
+      <article class="feat">
+        <img src="https://cdn.jsdelivr.net/gh/tiluxfacebook-arch/hutbuimini5in1@sua-dong-ho-review/ladi/img/anh-03.jpg" loading="lazy" width="750" height="750" alt="Máy hút bụi dùng trên ghế xe cùng các đầu hút, bơm và bàn chải">
+        <div class="feat-body"><span class="ic feat-ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><div><h3>5 trong 1: hút, thổi, bơm, hút chân không, chải</h3><p>Hút bụi, thổi bụi bàn phím, bơm phao bơi, rút chân không túi đồ, chải khe gió. Một máy thay cho năm dụng cụ.</p></div></div>
+      </article>
+      <article class="feat">
+        <img src="https://cdn.jsdelivr.net/gh/tiluxfacebook-arch/hutbuimini5in1@sua-dong-ho-review/ladi/img/anh-04.jpg" loading="lazy" width="750" height="750" alt="Hút bụi không dây trong khoang lái ô tô">
+        <div class="feat-body"><span class="ic feat-ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2.5" ry="2.5"/><line x1="10" y1="5" x2="14" y2="5"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span><div><h3>Không dây, sạc Type-C</h3><p>Pin Lithium dung lượng lớn, sạc bằng củ sạc điện thoại hoặc cổng USB trên xe. Không vướng dây khi hút hàng ghế sau.</p></div></div>
+      </article>
+      <article class="feat">
+        <img src="https://cdn.jsdelivr.net/gh/tiluxfacebook-arch/hutbuimini5in1@sua-dong-ho-review/ladi/img/anh-05.jpg" loading="lazy" width="750" height="750" alt="Đầu hút khe hẹp hút vụn bẩn trên ghế da ô tô">
+        <div class="feat-body"><span class="ic feat-ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="2" x2="9" y2="4"/><line x1="15" y1="2" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="22"/><line x1="15" y1="20" x2="15" y2="22"/><line x1="20" y1="9" x2="22" y2="9"/><line x1="20" y1="14" x2="22" y2="14"/><line x1="2" y1="9" x2="4" y2="9"/><line x1="2" y1="14" x2="4" y2="14"/></svg></span><div><h3>Đầu hút khe hẹp, không góc chết</h3><p>Đầu dẹt luồn vào khe giữa ghế và bệ tì tay, rãnh cửa, dưới pedal. Hộp bụi trong suốt, tháo rửa bằng nước.</p></div></div>
+      </article>
+    </div>
+    <div class="gallery">
+      <img src="https://cdn.jsdelivr.net/gh/tiluxfacebook-arch/hutbuimini5in1@sua-dong-ho-review/ladi/img/anh-06.jpg" loading="lazy" width="750" height="750" alt="Chế độ thổi làm sạch bàn phím laptop và thổi lửa dã ngoại">
+      <img src="https://cdn.jsdelivr.net/gh/tiluxfacebook-arch/hutbuimini5in1@sua-dong-ho-review/ladi/img/anh-07.jpg" loading="lazy" width="750" height="750" alt="Hút sạch bụi mịn trên ghế và sàn xe">
+      <img src="https://cdn.jsdelivr.net/gh/tiluxfacebook-arch/hutbuimini5in1@sua-dong-ho-review/ladi/img/anh-08.jpg" loading="lazy" width="750" height="750" alt="Bộ 5 đầu hút phụ kiện đi kèm máy">
+    </div>
+  </div>
+</section>
+
+<section class="sec pale" id="thong-so">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Thông số</div>
+      <h2>Trong hộp có gì</h2>
+    </div>
+    <div class="spec-grid">
+      <div class="box-card">
+        <h3>Bộ sản phẩm đầy đủ</h3>
+        <ul class="box-list">
+          <li><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.5 9.4 7.55 4.24"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span><div><b>1 thân máy CLEANER-PRO</b><span>Màu đen viền vàng hồng, kèm hộp bụi và lõi lọc</span></div></li>
+          <li><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><div><b>5 đầu hút đa năng</b><span>Đầu khe hẹp, đầu rộng, bàn chải, 2 đầu bơm hơi</span></div></li>
+          <li><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><div><b>1 cáp sạc Type-C</b><span>Sạc từ củ sạc điện thoại hoặc cổng USB ô tô</span></div></li>
+        </ul>
+        <img src="https://cdn.jsdelivr.net/gh/tiluxfacebook-arch/hutbuimini5in1@sua-dong-ho-review/ladi/img/anh-09.jpg" loading="lazy" width="750" height="1344" alt="7 công nghệ trên máy: động cơ turbine, không dây một nút khởi động, sạc nhanh Type-C, chip biến tần">
+      </div>
+      <div>
+        <table class="spec-table">
+          <tbody>
+            <tr><th scope="row">Tên sản phẩm</th><td>Máy hút bụi ô tô CLEANER-PRO</td></tr>
+            <tr><th scope="row">Lực hút</th><td class="hl">4500Pa</td></tr>
+            <tr><th scope="row">Chức năng</th><td>Hút / Thổi / Bơm / Hút chân không / Bàn chải - 5 trong 1</td></tr>
+            <tr><th scope="row">Động cơ</th><td>Turbine không chổi than</td></tr>
+            <tr><th scope="row">Dung lượng pin</th><td>Pin Lithium dung lượng lớn</td></tr>
+            <tr><th scope="row">Cổng sạc</th><td>Type-C</td></tr>
+            <tr><th scope="row">Công tắc</th><td>Một chạm Bật/Tắt</td></tr>
+            <tr><th scope="row">Kích thước</th><td class="num" style="font-size:19px">62 x 190 x 445 mm (kèm hộp bụi)</td></tr>
+            <tr><th scope="row">Màu sắc</th><td>Đen cá tính</td></tr>
+            <tr><th scope="row">Đề xuất sử dụng</th><td>Ô tô, gia đình, bàn làm việc</td></tr>
+          </tbody>
+        </table>
+        <img src="https://cdn.jsdelivr.net/gh/tiluxfacebook-arch/hutbuimini5in1@sua-dong-ho-review/ladi/img/anh-10.jpg" loading="lazy" width="750" height="750" alt="Bảng thông tin sản phẩm CLEANER-PRO" style="border-radius:22px;margin-top:22px;box-shadow:var(--shadow-sm)">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="chinh-sach">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Chính sách</div>
+      <h2>Mua không lo, nhận hàng mới trả tiền</h2>
+    </div>
+    <div class="pol-grid">
+      <div class="pol"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h2"/><path d="M14 9h4l4 4v4a1 1 0 0 1-1 1h-1"/><circle cx="7" cy="18" r="2"/><path d="M9 18h6"/><circle cx="17" cy="18" r="2"/></svg></span><h3>Freeship toàn quốc</h3><p>Giao 1-3 ngày nội thành, 3-5 ngày tỉnh.</p></div>
+      <div class="pol"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg></span><h3>Thanh toán khi nhận</h3><p>Không cần chuyển khoản trước. Trả tiền cho shipper.</p></div>
+      <div class="pol"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></span><h3>Kiểm tra trước khi trả</h3><p>Mở hộp, bật thử máy rồi mới thanh toán.</p></div>
+      <div class="pol"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14 4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-3"/></svg></span><h3>Đổi mới trong 7 ngày</h3><p>Lỗi do nhà sản xuất đổi máy mới, bảo hành 6 tháng.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec pale" id="dat-hang">
+  <div class="wrap order-grid">
+    <div class="order-copy">
+      <h2>Giữ suất giá <span>299.000đ</span> trong 30 giây</h2>
+      <p>Điền tên, số điện thoại và địa chỉ. Nhân viên gọi xác nhận trong 15 phút giờ hành chính, rồi đóng gói gửi đi ngay trong ngày.</p>
+      <ol class="steps">
+        <li><span class="n">1</span>Điền thông tin và chọn số lượng</li>
+        <li><span class="n">2</span>Nhận cuộc gọi xác nhận đơn</li>
+        <li><span class="n">3</span>Nhận hàng, kiểm tra, rồi mới thanh toán</li>
+      </ol>
+      <div class="cd-chip"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>Giá sốc còn <b data-cd="hms">00:00:00</b></div>
+      <ul class="promises">
+        <li><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Không cần chuyển khoản trước</li>
+        <li><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Miễn phí vận chuyển toàn quốc</li>
+        <li><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Đổi máy mới trong 7 ngày nếu lỗi</li>
+      </ul>
+    </div>
+
+    <div class="form-card" id="inlineCard">
+      <form id="orderForm" class="js-order" novalidate data-src="inline">
+        <h3>Thông tin đặt hàng</h3>
+        <p class="fc-sub">Freeship - Thanh toán khi nhận hàng</p>
+        <div class="hp" aria-hidden="true"><label for="website">Website</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
+        <div class="form-fail" role="alert"></div>
+        <div class="fg"><label for="fullname">Họ và tên <em>*</em></label><input type="text" id="fullname" name="fullname" autocomplete="name" placeholder="VD: Nguyễn Văn An"><div class="msg">Nhập họ tên thật, chỉ gồm chữ (không số, không ký tự lạ).</div></div>
+        <div class="fg"><label for="phone">Số điện thoại <em>*</em></label><input type="tel" id="phone" name="phone" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="VD: 0901234567"><div class="msg">Nhập số điện thoại 10 số, bắt đầu bằng 0.</div></div>
+        <div class="fg"><label for="address">Địa chỉ nhận hàng <em>*</em></label><input type="text" id="address" name="address" autocomplete="street-address" placeholder="Số nhà, đường, phường/xã, quận/huyện, tỉnh/thành"><div class="msg">Nhập địa chỉ đầy đủ để shipper giao đúng nơi.</div></div>
+        <div class="fg-row">
+          <div class="fg"><label for="quantity">Chọn gói</label>
+            <select id="quantity" name="quantity">
+              <option value="1">1 máy - 299.000đ</option>
+              <option value="2" selected>Combo 2 máy - 449.000đ (rẻ nhất)</option>
+            </select></div>
+          <div class="fg"><label for="calltime">Giờ tiện nghe máy</label>
+            <select id="calltime" name="calltime">
+              <option value="Bất kỳ lúc nào">Bất kỳ lúc nào</option>
+              <option value="Sáng 8h-12h">Sáng 8h-12h</option>
+              <option value="Chiều 13h-17h">Chiều 13h-17h</option>
+              <option value="Tối 18h-21h">Tối 18h-21h</option>
+            </select></div>
+        </div>
+        <div class="fg"><label for="note">Ghi chú (không bắt buộc)</label><textarea id="note" name="note" placeholder="VD: Giao giờ hành chính"></textarea></div>
+        <div class="sum"><div class="l">Tổng thanh toán khi nhận hàng<small data-save>Tiết kiệm 747.000đ</small></div><div class="t" data-total>449.000đ</div></div>
+        <button type="submit" class="btn btn-or submit"><span class="spin" aria-hidden="true"></span><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></span><span>Gửi thông tin đặt hàng</span></button>
+        <p class="form-note">Bằng việc đặt hàng, bạn đồng ý với <a href="dieu-khoan-su-dung.html" target="_blank" rel="noopener">Điều khoản</a> và <a href="chinh-sach-bao-mat.html" target="_blank" rel="noopener">Chính sách bảo mật</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Giảm 50% - chỉ trong khung giờ này</h2>
+    <p>1 máy 299.000đ, combo 2 máy chỉ 449.000đ. Freeship, kiểm tra hàng trước khi trả tiền.</p>
+    <div class="cd" data-cd="block">
+      <div class="u"><b data-u="h">00</b><small>Giờ</small></div><span class="colon">:</span>
+      <div class="u"><b data-u="m">00</b><small>Phút</small></div><span class="colon">:</span>
+      <div class="u"><b data-u="s">00</b><small>Giây</small></div>
+    </div>
+    <div><button class="btn btn-lg js-open" type="button"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></span>Đặt hàng giảm 50% ngay</button></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a href="#top" class="logo"><span class="logo-mark">C</span><span class="logo-word">CLEANER<span>PRO</span></span></a>
+      <p style="max-width:40ch;margin-top:14px">Máy hút bụi cầm tay 5 trong 1 cho ô tô và gia đình. Giao hàng toàn quốc, thanh toán khi nhận hàng.</p>
+    </div>
+    <div>
+      <h4>Liên hệ</h4>
+      <ul>
+        <li><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><span>Hotline: <a href="tel:0395018127">0395 018 127</a></span></li>
+        <li><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a2 2 0 0 1-2.06 0L2 7"/></svg></span><a href="mailto:tiluxfacebook@gmail.com">tiluxfacebook@gmail.com</a></li>
+        <li><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><span>8:00 - 21:00 mỗi ngày</span></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Chính sách</h4>
+      <ul>
+        <li><a href="chinh-sach-bao-mat.html" target="_blank" rel="noopener">Chính sách bảo mật</a></li>
+        <li><a href="dieu-khoan-su-dung.html" target="_blank" rel="noopener">Điều khoản dịch vụ</a></li>
+        <li><a href="#chinh-sach">Giao hàng và đổi trả</a></li>
+      </ul>
+    </div>
+    <div class="copyright">&copy; 2026 CLEANER PRO. Bảo lưu mọi quyền.</div>
+  </div>
+</footer>
+
+<button class="fab js-open" type="button" aria-label="Mở khung đặt hàng nhanh">
+  <span class="ic cart"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></span>
+  <span><b>Đặt hàng -50%</b><small>Còn <span data-cd="hms">00:00:00</span></small></span>
+</button>
+
+<div class="backdrop" id="backdrop"></div>
+<div class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="panelTitle" aria-hidden="true">
+  <div class="panel-head">
+    <div><h3 id="panelTitle">Đặt hàng nhanh</h3><div class="cd-mini">Giá sốc còn <span data-cd="hms">00:00:00</span></div></div>
+    <button class="x" type="button" id="panelClose" aria-label="Đóng"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div id="panelBody">
+    <div class="mini"><img src="https://cdn.jsdelivr.net/gh/tiluxfacebook-arch/hutbuimini5in1@sua-dong-ho-review/ladi/img/anh-01.jpg" alt=""><div><b>Máy hút bụi cầm tay CLEANER-PRO 5 trong 1</b><div class="p num">299.000đ<s>598.000đ</s></div><div style="font-size:13px;font-weight:700;color:var(--or-deep)">Mua 2 chỉ 449.000đ</div></div></div>
+    <form id="quickForm" class="js-order" novalidate data-src="panel">
+      <div class="hp" aria-hidden="true"><label for="q_website">Website</label><input type="text" id="q_website" name="website" tabindex="-1" autocomplete="off"></div>
+      <div class="form-fail" role="alert"></div>
+      <div class="fg"><label for="q_fullname">Họ và tên <em>*</em></label><input type="text" id="q_fullname" name="fullname" autocomplete="name" placeholder="VD: Nguyễn Văn An"><div class="msg">Nhập họ tên thật, chỉ gồm chữ (không số, không ký tự lạ).</div></div>
+      <div class="fg"><label for="q_phone">Số điện thoại <em>*</em></label><input type="tel" id="q_phone" name="phone" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="VD: 0901234567"><div class="msg">Nhập số điện thoại 10 số, bắt đầu bằng 0.</div></div>
+      <div class="fg"><label for="q_address">Địa chỉ nhận hàng <em>*</em></label><input type="text" id="q_address" name="address" autocomplete="street-address" placeholder="Số nhà, đường, phường/xã, tỉnh/thành"><div class="msg">Nhập địa chỉ đầy đủ để shipper giao đúng nơi.</div></div>
+      <div class="tiers" role="group" aria-label="Chọn gói">
+        <button type="button" class="tier" data-q="1" aria-pressed="false"><b>1 máy</b><span class="num">299.000đ</span><small>Giá gốc 598.000đ</small></button>
+        <button type="button" class="tier" data-q="2" aria-pressed="true"><span class="badge">RẺ NHẤT</span><b>Combo 2 máy</b><span class="num">449.000đ</span><small>224.500đ/máy</small></button>
+      </div>
+      <input type="hidden" name="quantity" id="q_quantity" value="2">
+      <div class="sum"><div class="l">Tổng thanh toán khi nhận hàng<small data-save>Tiết kiệm 747.000đ</small></div><div class="t" data-total>449.000đ</div></div>
+      <button type="submit" class="btn btn-or submit"><span class="spin" aria-hidden="true"></span><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Xác nhận đặt hàng</span></button>
+      <p class="form-note">Freeship - Kiểm tra hàng rồi mới thanh toán</p>
+    </form>
+  </div>
+</div>
+
+<script>
+/* ================= CẤU HÌNH - chỉnh tại đây ================= */
+var PIXEL_ID    = '1608528847436843';
+var PIXEL_IDS   = ['1608528847436843','4727157860901767']; // mọi pixel nhận sự kiện
+var PRICE       = 299000;      // giá bán 1 máy (VNĐ)
+var PRICE_2     = 449000;      // giá combo 2 máy (VNĐ)
+// Tổng tiền: mỗi cặp 2 máy tính giá combo, máy lẻ tính giá 1 máy
+function priceFor(q){return Math.floor(q/2)*PRICE_2+(q%2)*PRICE;}
+var OLD_PRICE   = 598000;      // giá gốc (VNĐ)
+var PRODUCT_ID  = 'cleaner-pro-5in1';
+var PRODUCT_NAME= 'Máy hút bụi cầm tay CLEANER-PRO 5 trong 1';
+var STOCK_TOTAL = 200, STOCK_SOLD = 172;   // số liệu khan hiếm - thay bằng số thật
+// 1 URL webhook backend duy nhất. Dán URL Web App của Google Apps Script (file backend-apps-script.gs) vào đây.
+var WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbz8pNBhJcXxfmshLS2aW0JQdIQmrDqOzzp8VOSy7lXLG2pr7ckBgx_yCYCkn_NUHPz3lQ/exec';
+
+/* ================= Meta Pixel (browser) ================= */
+// Pixel base code nằm trong <head> (index.html). Dự phòng: nếu chưa có thì tự nạp.
+if(!window.fbq){!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+PIXEL_IDS.forEach(function(id){fbq('init', id);});
+fbq('track', 'PageView');}
+fbq('track', 'ViewContent', {content_ids:[PRODUCT_ID], content_name:PRODUCT_NAME, content_type:'product', value:PRICE, currency:'VND'});
+
+/* ================= Utils (_utils.md) ================= */
+function getCookie(name){var m=document.cookie.match(new RegExp('(^| )'+name+'=([^;]+)'));return m?decodeURIComponent(m[2]):'';}
+var userIP='', ipResolved=false;
+function tryCloudflare(){return fetch('https://www.cloudflare.com/cdn-cgi/trace',{cache:'no-store'}).then(function(r){return r.text();}).then(function(t){var m=t.match(/ip=([^\n]+)/);if(m&&m[1])return m[1].trim();return Promise.reject('no ip');});}
+function tryIpify(){return fetch('https://api.ipify.org?format=json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){if(d&&d.ip)return d.ip;return Promise.reject('no ip');});}
+function tryIpinfo(){return fetch('https://ipinfo.io/json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){if(d&&d.ip)return d.ip;return Promise.reject('no ip');});}
+tryCloudflare().catch(function(){return tryIpify();}).catch(function(){return tryIpinfo();}).then(function(ip){userIP=ip;}).catch(function(){}).then(function(){ipResolved=true;});
+function removeDiacritics(str){var map={'à':'a','á':'a','ả':'a','ã':'a','ạ':'a','ă':'a','ằ':'a','ắ':'a','ẳ':'a','ẵ':'a','ặ':'a','â':'a','ầ':'a','ấ':'a','ẩ':'a','ẫ':'a','ậ':'a','è':'e','é':'e','ẻ':'e','ẽ':'e','ẹ':'e','ê':'e','ề':'e','ế':'e','ể':'e','ễ':'e','ệ':'e','ì':'i','í':'i','ỉ':'i','ĩ':'i','ị':'i','ò':'o','ó':'o','ỏ':'o','õ':'o','ọ':'o','ô':'o','ồ':'o','ố':'o','ổ':'o','ỗ':'o','ộ':'o','ơ':'o','ờ':'o','ớ':'o','ở':'o','ỡ':'o','ợ':'o','ù':'u','ú':'u','ủ':'u','ũ':'u','ụ':'u','ư':'u','ừ':'u','ứ':'u','ử':'u','ữ':'u','ự':'u','ỳ':'y','ý':'y','ỷ':'y','ỹ':'y','ỵ':'y','đ':'d'};return str.toLowerCase().split('').map(function(c){return map[c]||c;}).join('');}
+function generateCode(){var c='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';var a=new Uint8Array(32);window.crypto.getRandomValues(a);var s='';for(var i=0;i<32;i++)s+=c[a[i]%c.length];return s;}
+
+/* ================= Meta tracking helpers ================= */
+function getFbc(){var fbc=getCookie('_fbc');if(fbc)return fbc;var fbclid=new URLSearchParams(location.search).get('fbclid');if(fbclid){fbc='fb.1.'+Date.now()+'.'+fbclid;document.cookie='_fbc='+fbc+'; max-age='+(90*24*60*60)+'; path=/; SameSite=Lax';return fbc;}return '';}
+function getFbp(){var fbp=getCookie('_fbp');if(fbp)return fbp;fbp='fb.1.'+Date.now()+'.'+Math.floor(Math.random()*2147483647);document.cookie='_fbp='+fbp+'; max-age='+(90*24*60*60)+'; path=/; SameSite=Lax';return fbp;}
+getFbc(); // lưu fbclid vào cookie _fbc ngay khi vào trang
+function waitForIP(cb){if(ipResolved){cb();return;}var w=0;var iv=setInterval(function(){w+=100;if(ipResolved||w>=2000){clearInterval(iv);cb();}},100);}
+
+/* ================= Giá + tồn kho ================= */
+function vnd(n){return n.toLocaleString('vi-VN').replace(/,/g,'.')+'đ';}
+(function(){
+  var left=STOCK_TOTAL-STOCK_SOLD, pct=Math.round(STOCK_SOLD/STOCK_TOTAL*100);
+  document.querySelectorAll('[data-stock="sold"]').forEach(function(e){e.textContent=STOCK_SOLD;});
+  document.querySelectorAll('[data-stock="left"]').forEach(function(e){e.textContent=left;});
+  var bar=document.querySelector('[data-stock="bar"]'); if(bar){bar.style.width=pct+'%';bar.parentNode.setAttribute('aria-valuenow',pct);}
+})();
+function updateTotal(form,qty){
+  form.querySelector('[data-total]').textContent=vnd(priceFor(qty));
+  form.querySelector('[data-save]').textContent='Tiết kiệm '+vnd(OLD_PRICE*qty-priceFor(qty));
+}
+
+/* ================= Countdown đến 12:00 hoặc 00:00 gần nhất ================= */
+function nextDeadline(){var n=new Date(),d=new Date(n);if(n.getHours()<12){d.setHours(12,0,0,0);}else{d.setDate(d.getDate()+1);d.setHours(0,0,0,0);}return d;}
+var deadline=nextDeadline();
+function pad(x){return (x<10?'0':'')+x;}
+function tick(){
+  var ms=deadline-new Date(); if(ms<=0){deadline=nextDeadline();ms=deadline-new Date();}
+  var t=Math.floor(ms/1000),h=pad(Math.floor(t/3600)),m=pad(Math.floor(t%3600/60)),s=pad(t%60);
+  document.querySelectorAll('[data-cd="hms"]').forEach(function(e){e.textContent=h+':'+m+':'+s;});
+  document.querySelectorAll('[data-cd="block"]').forEach(function(b){b.querySelector('[data-u="h"]').textContent=h;b.querySelector('[data-u="m"]').textContent=m;b.querySelector('[data-u="s"]').textContent=s;});
+}
+tick(); setInterval(tick,1000);
+
+/* ================= Panel đặt hàng nhanh ================= */
+var panel=document.getElementById('panel'), backdrop=document.getElementById('backdrop'), lastFocus=null, icSent=false;
+function trackInitiateCheckout(){ if(icSent) return; icSent=true; if(typeof fbq!=='undefined') fbq('track','InitiateCheckout',{content_ids:[PRODUCT_ID],content_type:'product',value:PRICE,currency:'VND',num_items:1}); }
+function openPanel(){lastFocus=document.activeElement;panel.classList.add('open');backdrop.classList.add('open');panel.setAttribute('aria-hidden','false');trackInitiateCheckout();setTimeout(function(){var f=panel.querySelector('input:not([type=hidden]):not([tabindex="-1"])');if(f)f.focus();},320);}
+function closePanel(){panel.classList.remove('open');backdrop.classList.remove('open');panel.setAttribute('aria-hidden','true');if(lastFocus)lastFocus.focus();}
+document.querySelectorAll('.js-open').forEach(function(b){b.addEventListener('click',openPanel);});
+document.getElementById('panelClose').addEventListener('click',closePanel);
+backdrop.addEventListener('click',closePanel);
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&panel.classList.contains('open'))closePanel();});
+
+var qQty=2, qHidden=document.getElementById('q_quantity'), quickForm=document.getElementById('quickForm');
+function setQ(v){qQty=v===1?1:2;qHidden.value=qQty;updateTotal(quickForm,qQty);document.querySelectorAll('.tier').forEach(function(t){t.setAttribute('aria-pressed',String(+t.getAttribute('data-q')===qQty));});}
+document.querySelectorAll('.tier').forEach(function(t){t.addEventListener('click',function(){setQ(+t.getAttribute('data-q'));});});
+var orderForm=document.getElementById('orderForm');
+document.getElementById('quantity').addEventListener('change',function(){updateTotal(orderForm,+this.value);});
+orderForm.addEventListener('focusin',trackInitiateCheckout);
+
+/* ================= Validation ================= */
+/* Tên hợp lệ: có chữ cái, không có số, không lặp 1 ký tự, không chứa từ tục / vô nghĩa */
+var BAD_NAME=/(^|\s)(khung|khung dien|dien khung|tam than|than kinh|oc cho|con cho|thang ngu|dm|dcm|dmm|vcl|vkl|clm|dit|lon|cac|dkm|test|abc|abcd|asd|asdf|qwe|qwerty|xxx|aaa|fake|spam|admin|lua dao|bo may|ma may)(\s|$)/;
+function nameOk(v){
+  var t=removeDiacritics(v.trim()).replace(/\s+/g,' ');
+  if(t.length<2||t.length>60) return false;
+  if(/[0-9@#$%^&*_=+<>{}\[\]\\|\/]/.test(t)) return false;
+  if(!/[a-z]/.test(t)) return false;
+  if(/^(.)\1+$/.test(t.replace(/\s/g,''))) return false;
+  if(BAD_NAME.test(t)) return false;
+  return true;
+}
+var RULES={
+  fullname:function(v){return nameOk(v);},
+  phone:function(v){return /^0\d{9}$/.test(v.replace(/[\s.]/g,''));},
+  address:function(v){return v.trim().length>=8;}
+};
+function checkField(input){var ok=RULES[input.name](input.value);input.closest('.fg').classList.toggle('err',!ok);input.setAttribute('aria-invalid',ok?'false':'true');return ok;}
+document.querySelectorAll('.js-order').forEach(function(form){
+  ['fullname','phone','address'].forEach(function(n){
+    var i=form.querySelector('[name="'+n+'"]');
+    i.addEventListener('blur',function(){if(i.value)checkField(i);});
+    i.addEventListener('input',function(){if(i.closest('.fg').classList.contains('err'))checkField(i);});
+  });
+  form.addEventListener('submit',function(e){e.preventDefault();submitOrder(form);});
+});
+
+/* ================= Submit -> webhook -> Purchase ================= */
+// KHÔNG gọi CAPI ở đây - backend tự xử lý qua webhook (token Meta chỉ nằm ở backend).
+function submitOrder(form){
+  var btn=form.querySelector('.submit'), fail=form.querySelector('.form-fail');
+  if(btn.disabled) return;
+  if(form.querySelector('[name="website"]').value) return; // honeypot
+  var ok=true, firstBad=null;
+  ['fullname','phone','address'].forEach(function(n){var i=form.querySelector('[name="'+n+'"]');if(!checkField(i)){ok=false;if(!firstBad)firstBad=i;}});
+  if(!ok){firstBad.focus();return;}
+  fail.classList.remove('show');
+  // Chặn gửi lại cùng số điện thoại trong 5 phút (khách bấm 2 lần / spam đơn)
+  var ph0=form.querySelector('[name="phone"]').value.replace(/[\s.]/g,'');
+  var last=null; try{last=JSON.parse(localStorage.getItem('cp_last_order')||'null');}catch(e){}
+  if(last && Date.now()-last.t<5*60*1000 && (last.p===ph0 || Date.now()-last.t<60*1000)){
+    fail.textContent='Đơn của bạn đã được ghi nhận lúc '+new Date(last.t).toLocaleTimeString('vi-VN')+'. Nhân viên sẽ gọi xác nhận, bạn không cần đặt lại. Cần sửa đơn, gọi hotline 0395 018 127.';
+    fail.classList.add('show'); return;
+  }
+  btn.classList.add('loading'); btn.disabled=true;
+
+  waitForIP(function(){
+    var qty=parseInt(form.querySelector('[name="quantity"]').value,10)===1?1:2;
+    var total=priceFor(qty);
+    var eventId='purchase_'+Date.now()+'_'+Math.random().toString(36).substr(2,9);
+    var q=new URLSearchParams(location.search);
+    var phone=form.querySelector('[name="phone"]').value.replace(/[\s.]/g,'');
+    var fullname=form.querySelector('[name="fullname"]').value.trim();
+    var noteEl=form.querySelector('[name="note"]'), timeEl=form.querySelector('[name="calltime"]');
+    var payload={
+      event:'purchase',
+      fullname:fullname, phone:phone,
+      address:form.querySelector('[name="address"]').value.trim(),
+      product_id:PRODUCT_ID, product_name:PRODUCT_NAME,
+      quantity:qty, unit_price:PRICE, combo_price:PRICE_2, total:total, currency:'VND',
+      calltime:timeEl?timeEl.value:'', note:noteEl?noteEl.value.trim():'',
+      form_source:form.getAttribute('data-src'),
+      code:generateCode(), timestamp:new Date().toISOString(),
+      event_time:Math.floor(Date.now()/1000), event_id:eventId, event_name:'Purchase', action_source:'website',
+      fbc:getFbc(), fbp:getFbp(), fbclid:q.get('fbclid')||'',
+      client_user_agent:navigator.userAgent||'', client_ip_address:userIP, event_source_url:location.href,
+      utm_source:q.get('utm_source')||'', utm_medium:q.get('utm_medium')||'', utm_campaign:q.get('utm_campaign')||'',
+      utm_content:q.get('utm_content')||'', utm_term:q.get('utm_term')||'', ref:q.get('ref')||''
+    };
+    var demo=/YOUR_DEPLOYMENT_ID|YOUR-BACKEND/.test(WEBHOOK_URL);
+    var req=demo
+      ? (console.warn('[CLEANER PRO] WEBHOOK_URL chưa cấu hình - đơn chỉ hiển thị, CHƯA được lưu.'), Promise.resolve({ok:true}))
+      // text/plain để tránh CORS preflight (Apps Script không hỗ trợ OPTIONS); backend đọc JSON từ body
+      : fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)});
+    req.then(function(r){
+      if(!r.ok) throw new Error('HTTP '+r.status);
+      return r.json ? r.json().catch(function(){return {};}) : {};
+    }).then(function(res){
+      if(res && res.status==='error') throw new Error(res.message||'Backend từ chối đơn');
+      try{localStorage.setItem('cp_last_order',JSON.stringify({t:Date.now(),p:phone}));}catch(e){}
+      // Pixel Purchase dùng CÙNG event_id với CAPI để Meta dedup.
+      // Backend đánh dấu nghi ảo (res.flag==='review') -> KHÔNG bắn Purchase để không làm bẩn dữ liệu quảng cáo.
+      if(typeof fbq!=='undefined' && !(res && res.flag==='review')){
+        PIXEL_IDS.forEach(function(id){fbq('init',id,{ph:'84'+phone.slice(1),country:'vn'});}); // advanced matching, Pixel tự hash
+        fbq('track','Purchase',{content_ids:[PRODUCT_ID],content_name:PRODUCT_NAME,content_type:'product',num_items:qty,value:total,currency:'VND'},{eventID:eventId});
+      }
+      showSuccess(form,{fullname:fullname,phone:phone,qty:qty,total:total});
+    }).catch(function(err){
+      console.error(err);
+      btn.classList.remove('loading'); btn.disabled=false;
+      fail.textContent='Chưa gửi được đơn do lỗi kết nối. Bấm gửi lại, hoặc gọi hotline 0395 018 127 để đặt hàng.';
+      fail.classList.add('show');
+    });
+  });
+}
+
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function showSuccess(form,o){
+  var box=document.createElement('div'); box.className='success'; box.setAttribute('role','status');
+  box.innerHTML='<div class="okc ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div>'+
+    '<h3>Đặt hàng thành công</h3>'+
+    '<p>Cảm ơn '+esc(o.fullname)+'. Nhân viên sẽ gọi số '+esc(o.phone)+' để xác nhận đơn trong 15 phút (giờ hành chính).</p>'+
+    '<ul class="sum-list"><li><span>Sản phẩm</span><b>CLEANER-PRO 5 trong 1</b></li><li><span>Số lượng</span><b>'+o.qty+' máy</b></li><li><span>Tổng tiền (COD)</span><b style="color:var(--or-deep)">'+vnd(o.total)+'</b></li><li><span>Số điện thoại</span><b>'+esc(o.phone)+'</b></li></ul>'+
+    '<button type="button" class="btn btn-ghost btn-sm js-reset">Đặt thêm đơn khác</button>';
+  form.hidden=true; form.parentNode.insertBefore(box,form.nextSibling);
+  box.querySelector('.js-reset').addEventListener('click',function(){
+    box.remove(); form.reset(); form.hidden=false;
+    var b=form.querySelector('.submit'); b.classList.remove('loading'); b.disabled=false;
+    form.querySelectorAll('.fg.err').forEach(function(g){g.classList.remove('err');});
+    if(form===quickForm) setQ(2); else updateTotal(form,2);
+  });
+}
+</script>
